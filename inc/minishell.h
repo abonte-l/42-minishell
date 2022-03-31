@@ -36,45 +36,10 @@
 # define PIPE '|'
 # define VAR '$'
 
-/*
-** defining node of the linked list
-*/
-typedef struct		s_node
-{
-	char			*data;
-	int				index;
-	struct s_node 	*next;
-	struct s_node	*prev;
-}					t_node;
-
-/*
-** defining a double linked list
-*/
-typedef struct		s_dlst
-{
-	int				length;
-	struct s_node 	*tail;
-	struct s_node	*head;
-}					t_dlst;
-
-/*
-** double linked list functions
-*/
-t_dlst	*dlist_new(void);
-t_dlst	*dlist_add_end(t_dlst *list, char *data);
-t_dlst	*dlist_add_start(t_dlst *list, char *data);
-void 	dlist_delete(t_dlst **list);
-void	new_node_end(t_dlst *list, t_node *new_node, char *data);
-void	new_node_start(t_dlst *list, t_node *new_node, char *data);
-
 void	free_array(char **array);
-
-char **split(char *raw_data, char *limit);
-
 void	get_path(char **cmd);
-
 void	cmd_exec(char **cmd);
-
+char 	**split(char *raw_data, char *limit);
 
 
 #endif
