@@ -52,9 +52,12 @@ $(OBJ_PATH)%.o:	$(SRCS_PATH)%.c $(HEADER)
 run: all
 	@./$(NAME)
 
+leaks: all
+	@valgrind --tool=memcheck --leak-check=full --leak-resolution=high --show-reachable=yes ./$(NAME)
+
 clean:
 	@rm -f $(OBJ)
-	@rm -rf $(OBJ_PATH)t_strncmp.c
+	@rm -rf $(OBJ_PATH)
 	@make -C $(LIB_DIR) clean
 	@echo "\033[33;1m$(NAME)\033[0;1m: objects deleted\033[0m"
 
