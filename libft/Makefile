@@ -7,17 +7,22 @@ SRC_PATH	=	srcs/
 
 MEM_PATH	=	$(SRC_PATH)mem/
 STR_PATH	=	$(SRC_PATH)str/
+LLIST_PATH	=	$(SRC_PATH)llist/
 
 MEM			=	ft_bzero.c			ft_memcpy.c 		ft_calloc.c \
 				ft_realloc.c
 				
 STR			=	ft_strlen.c			ft_strncmp.c		ft_strdup.c	\
-				ft_strdup.c			ft_strtok.c			ft_strcat.c \
+				ft_strdup.c			ft_strtok.c			ft_strcat.c 
+
+LLIST		=	dlist_add_end.c		dlist_add_start.c	dlist_new.c \
+				dlist_delete.c		new_node_start.c 	new_node_end.c 
 
 OBJ_PATH	=	obj/
 
 OBJ_NAME	+=	$(MEM:.c=.o)
 OBJ_NAME	+=	$(STR:.c=.o)
+OBJ_NAME	+=	$(LLIST:.c=.o)
 
 OBJ			=	$(addprefix $(OBJ_PATH),$(OBJ_NAME))
 
@@ -42,6 +47,11 @@ $(OBJ_PATH)%.o:	$(STR_PATH)%.c $(HEADER)
 	@printf "\033[34;1m|\033[0;m"
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+
+$(OBJ_PATH)%.o:	$(LLIST_PATH)%.c $(HEADER)
+	@printf "\033[34;1m|\033[0;m"
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@	
 
 clean:
 	@$(RM) $(OBJ_PATH)

@@ -6,10 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar 31 15:10:14 2022
+# Make data base, printed on Thu Mar 31 15:24:38 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -192,6 +193,7 @@ LANGUAGE = fr_FR
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-779fd3af-1.63.2-main.sock
+ 
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -258,10 +260,10 @@ VSCODE_PID = 11382
 # Directories
 
 # srcs/util (device 2054, inode 1774394): No files, no impossibilities so far.
-# . (device 2054, inode 1774355): 8 files, no impossibilities.
+# . (device 2054, inode 1774355): 9 files, no impossibilities.
 # srcs (device 2054, inode 1774378): No files, no impossibilities so far.
 
-# 8 files, no impossibilities in 3 directories.
+# 9 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -277,7 +279,6 @@ obj/%.o: srcs/%.c inc/minishell.h
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
- 
 # 2 implicit rules, 0 (0.0%) terminal.
 
 # Files
@@ -296,6 +297,7 @@ all: libft/libft.a minishell
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
+ 
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 .PHONY: all clean fclean re run
@@ -368,6 +370,7 @@ fclean: clean
 	@make -C $(LIB_DIR) fclean
 	@echo "\033[33;1m$(NAME)\033[0;1m: $(NAME) deleted\033[0m"
 
+ 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
@@ -425,12 +428,12 @@ obj/prompt.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 271 B / avg = 9 B
-# current buf: size = 8162 B / used = 271 B / count = 30 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 31 / storage = 281 B / avg = 9 B
+# current buf: size = 8162 B / used = 281 B / count = 31 / avg = 9 B
 
-# strcache performance: lookups = 58 / hit rate = 48%
+# strcache performance: lookups = 59 / hit rate = 47%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=1/58=2%
-# Finished Make data base on Thu Mar 31 15:10:14 2022
+# Load=31/8192=0%, Rehash=0, Collisions=1/59=2%
+# Finished Make data base on Thu Mar 31 15:24:38 2022
 
  
