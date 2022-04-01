@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:18:24 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/03/31 15:02:59 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 11:19:31 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* ************************************************************************** */
 /*                             CMD_EXEC FUNCTION                              */
 /*                                                                            */
-/* lines 33-35 : forking in parent and child processes                        */
+/* lines 33-35 : forking parent and child processes                        */
 /* lines 36-46 : If the fork was successful the parent process                */
 /* 				waits for the child (process fork)                            */
 /* lines 38-39 : block the parent process until the child terminates          */
