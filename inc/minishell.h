@@ -53,6 +53,7 @@ void	builtin_cd(char *path);
 void	builtin_pwd(void);
 void	builtin_env(t_dlst *p_list);
 void	builtin_echo(int option, char **built_in);
+void	builtin_exit(void);
 
 /*
 ** environment variables functions
