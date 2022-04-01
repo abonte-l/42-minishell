@@ -50,6 +50,7 @@ t_dlst	*dlist_add_start(t_dlst *list, char *data);
 void 	dlist_delete(t_dlst **list);
 void	new_node_end(t_dlst *list, t_node *new_node, char *data);
 void	new_node_start(t_dlst *list, t_node *new_node, char *data);
+void 	dlist_display(t_dlst *p_list);
 
 /*
 ** memory functions

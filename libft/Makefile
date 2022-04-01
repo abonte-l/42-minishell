@@ -20,7 +20,8 @@ STR			=	ft_strlen.c			ft_strncmp.c		ft_strdup.c	\
 CHAR		=	ft_putchar.c		ft_putchar_fd.c
 
 LLIST		=	dlist_add_end.c		dlist_add_start.c	dlist_new.c \
-				dlist_delete.c		new_node_start.c 	new_node_end.c 
+				dlist_delete.c		dlist_display.c		new_node_start.c \
+				new_node_end.c	
 
 OBJ_PATH	=	obj/
 
