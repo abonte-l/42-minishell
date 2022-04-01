@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:35:58 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 11:23:53 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 11:34:55 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 /* ************************************************************************** */
 /*                            GET PATH FUNCTION                               */
 /*                                                                            */
-/* in get_path:      				                                          */
+/* in get_path:                                                               */
 /* lines 74-75 : If the path is null, a path is created                       */
-/* lines 76-77 : If cmd is not the absolute path, we look for the absolute 	  */
-/*				 path of the binary with the PATH environment variable        */
+/* lines 76-77 : If cmd is not the absolute path, we look for the absolute    */
+/*               path of the binary with the PATH environment variable        */
 /*                                                                            */
-/* in make_magic_path:      		                                          */
-/* line 45 	   : Spliting the path to check where the binary is               */
+/* in make_magic_path:                                                        */
+/* line 45     : Spliting the path to check where the binary is               */
 /* lines 48-65 : Loop on each directory of the path to find the location      */
-/*				of the binary 											      */
+/*               of the binary                                                */
 /* lines 50-51 : Allocation path's len + '/' + binary's len + 1 (\0)          */
 /* lines 54-56 : Concatenation of the path, '/' and binary name               */
 /* line 57     : Checking the existence of the file and we exiting the        */
-/*				loop if access returns '0' 								      */
+/*               loop if access returns '0'                                   */
 /* lines 64-65 : The binary is replaced by the absolute path or NULL if the   */
-/*				binary does not exist                                         */
+/*               binary does not exist                                        */
 /*                                                                            */
 /* ************************************************************************** */
 
