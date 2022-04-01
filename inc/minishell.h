@@ -43,6 +43,13 @@ void	free_array(char **array);
 void	get_path(char **cmd);
 void	cmd_exec(char **cmd);
 char 	**split(char *raw_data, char *limit);
+bool	iz_builtin(char *cmd);
+void	builtin_exec(char **built_in);
 
+/*
+** builtins functions
+*/
+void	builtin_cd(char *path);
+void	builtin_pwd(void);
 
 #endif

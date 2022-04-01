@@ -2,9 +2,9 @@
 #include "../inc/minishell.h"
 
 /*
-** lines 16-21 :allocation of the buffer which stores the command
-** entered by the user
-** line 22 : writing a prompt
+** lines 20-25 :allocation of the buffer which stores the command
+** entered by the user 01
+** line 22 : writing a prompt 02
 ** lines  : loop reading STDIN
 */
 
@@ -13,25 +13,28 @@ int	main(void)
 	char	*buffer;
 	size_t	buf_size;
 	char	**cmd;
-	//char	delim[] = {SPACE, TAB, EOL};
 
 	buffer = NULL;
 	cmd = NULL;
 	buf_size = 2048;
-	buffer = (char *)ft_calloc(sizeof(char), buf_size);
+	buffer = (char *)ft_calloc(sizeof(char), buf_size); //01
 	if (buffer == NULL) 
 	{
 		perror("Malloc failure");
 		return (EXIT_FAILURE);
 	}
-	while ((buffer = readline("$> ")) != NULL) 
+	while ((buffer = readline("$> ")) != NULL) //02
 	{
 		cmd = split(buffer, " \n\t");
-		get_path(cmd);
-		if (cmd[0] == NULL)
+		if (cmd[0] == NULL) //check if the command exist
 			printf("Command not found\n");
+		else if (iz_builtin(cmd[0]) == false) //check if it's a built in command
+		{
+			get_path(cmd); //get path of th non built in command
+			cmd_exec(cmd); // execute the command
+		}
 		else
-			cmd_exec(cmd);
+			builtin_exec(cmd); //execute the built in command
 		free_array(cmd);
 	}
 	printf("Bye \n");

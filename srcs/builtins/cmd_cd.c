@@ -6,13 +6,13 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 19:01:19 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/03/31 19:02:58 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:12:40 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	built_in_cd(char *path)
+void	builtin_cd(char *path)
 {
 	if (chdir(path) == -1)
 		perror("chdir()");

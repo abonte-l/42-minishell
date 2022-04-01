@@ -66,6 +66,14 @@ char	*ft_strdup(const char *s1);
 char 	*ft_strtok(char *str, char *delim);
 char	*ft_strcat(char *dest, const char *src);
 size_t	ft_strlen(const char *s);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_putstr(char const *s);
+void	ft_putstr_fd(char const *s, int fd);
+
+/*
+** string functions
+*/
+
 
 #endif
