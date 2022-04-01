@@ -5,18 +5,24 @@
 ** lines 20-25 :allocation of the buffer which stores the command
 ** entered by the user 01
 ** line 22 : writing a prompt 02
-** lines  : loop reading STDIN
+** lines  : loop reading STDIN (-->tout le while ((buffer = readline("$> ")) != NULL))
 */
 
-int	main(void)
+int	main(int ac, char **av, char **envp)
 {
 	char	*buffer;
 	size_t	buf_size;
 	char	**cmd;
+	t_dlst	*var_env_lst;
 
+
+	(void)ac;
+	(void)av;
 	buffer = NULL;
 	cmd = NULL;
 	buf_size = 2048;
+	var_env_lst = dlist_new;
+	duplicate_env(envp, var_env_lst);
 	buffer = (char *)ft_calloc(sizeof(char), buf_size); //01
 	if (buffer == NULL) 
 	{
