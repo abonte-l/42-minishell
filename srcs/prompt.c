@@ -37,10 +37,10 @@ int	main(int ac, char **av, char **envp)
 			printf("Command not found\n");
 		else if (iz_builtin(cmd[0]) == true) //check if it's a built in command
 			builtin_exec(cmd, var_env_lst);//execute the built in command
-		else if (get_path(cmd, var_env_lst) == true) 
+		else if (get_path(cmd, var_env_lst) == true) //check if the binary
 			cmd_exec_env(cmd, envp);
 		else
-			cmd_exec(cmd);
+			cmd_exec(cmd); //exec cmd with absolute path already gave in the prompt
 		free_array(cmd);
 	}
 	printf("Bye \n");
