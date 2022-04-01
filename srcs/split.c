@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 09:10:47 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/03/31 14:56:08 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 11:38:28 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /* ************************************************************************** */
 /*                              SPLIT FUNCTION                                */
 /*                                                                            */
-/*  lines 34-41 : Split the string on delimiter, put every token			  */
-/*				in an array   												  */
-/*  lines 42-43 : Allocation of an element set to NULL at the end 			  */
-/*				of the array 		                                          */
+/*  lines 34-41 : Split the string on delimiter, put every token              */
+/*              in an array                                                   */
+/*  lines 42-43 : Allocation of an element set to NULL at the end             */
+/*              of the array                                                  */
 /*                                                                            */
 /* ************************************************************************** */
 
