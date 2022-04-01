@@ -72,8 +72,9 @@ void	ft_putstr(char const *s);
 void	ft_putstr_fd(char const *s, int fd);
 
 /*
-** string functions
+** char functions
 */
-
+void	ft_putchar(char c);
+void	ft_putchar_fd(char c, int fd);
 
 #endif

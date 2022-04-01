@@ -1,24 +1,7 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/anma/Bureau/Minishell'
  
-make -C libft
-printf "\033[34;1m|\033[0;m"
-mkdir obj/ 2> /dev/null || true
-gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/prompt.c -o obj/prompt.o
-printf "\033[34;1m|\033[0;m"
-mkdir obj/ 2> /dev/null || true
-gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/split.c -o obj/split.o
-printf "\033[34;1m|\033[0;m"
-mkdir obj/ 2> /dev/null || true
-gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/get_path.c -o obj/get_path.o
-printf "\033[34;1m|\033[0;m"
-mkdir obj/ 2> /dev/null || true
-gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/cmd_exec.c -o obj/cmd_exec.o
-printf "\033[34;1m|\033[0;m"
-mkdir obj/ 2> /dev/null || true
-gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/util/free.c -o obj/free.o
-printf "\n"
-gcc -Wall -Wextra -Werror  -o minishell obj/prompt.o obj/split.o obj/get_path.o obj/cmd_exec.o obj/free.o libft/libft.a -L.local/lib -lreadline
-echo "Compilation of \033[33;1mminishell\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"
+make: Nothing to be done for 'all'.
+ 
 make: Leaving directory '/home/anma/Bureau/Minishell'
  

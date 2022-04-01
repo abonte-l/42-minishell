@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:52:21 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 12:26:35 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:36:41 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ bool	iz_builtin(char *cmd)
 void	builtin_exec(char **built_in)
 {
 	if (!ft_strcmp(built_in[0], "pwd"))
-		built_in_pwd();
-	else if (!strcmp(built_in[0], "cd"))
-		built_in_cd(built_in[1]);
+		builtin_pwd();
+	else if (!ft_strcmp(built_in[0], "cd"))
+		builtin_cd(built_in[1]);
 }
