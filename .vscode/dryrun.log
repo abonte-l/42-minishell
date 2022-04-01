@@ -1,5 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/anma/Bureau/Minishell'
+ 
 make -C libft
 printf "\033[34;1m|\033[0;m"
 mkdir obj/ 2> /dev/null || true
@@ -7,7 +8,6 @@ gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/prompt.c -o obj/prompt.o
 printf "\033[34;1m|\033[0;m"
 mkdir obj/ 2> /dev/null || true
 gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/split.c -o obj/split.o
- 
 printf "\033[34;1m|\033[0;m"
 mkdir obj/ 2> /dev/null || true
 gcc -Wall -Wextra -Werror  -Iinc/ -c srcs/get_path.c -o obj/get_path.o

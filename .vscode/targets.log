@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar 31 15:28:16 2022
+# Make data base, printed on Fri Apr  1 11:46:00 2022
 
 # Variables
 
@@ -42,17 +42,17 @@ GDM_LANG = fr_FR
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"9fdd4736c50ab5d00bf618b3d10bedcc.fr","_translationsConfigFile":"/home/anma/.config/Code/clp/9fdd4736c50ab5d00bf618b3d10bedcc.fr/tcf.json","_cacheRoot":"/home/anma/.config/Code/clp/9fdd4736c50ab5d00bf618b3d10bedcc.fr","_resolvedLanguagePackCoreLocation":"/home/anma/.config/Code/clp/9fdd4736c50ab5d00bf618b3d10bedcc.fr/899d46d82c4c95423fb7e10e68eba52050e30ba3","_corruptedFile":"/home/anma/.config/Code/clp/9fdd4736c50ab5d00bf618b3d10bedcc.fr/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
-# makefile (from 'Makefile', line 19)
+# makefile (from 'Makefile', line 22)
 CFLAGS = -Wall -Wextra -Werror 
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
-# makefile (from 'Makefile', line 15)
+# makefile (from 'Makefile', line 18)
 SRCS_NAME = $(addprefix $(SRCS_PATH),$(SRCS))
 # environment
 GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# makefile (from 'Makefile', line 21)
+# makefile (from 'Makefile', line 24)
 LIB_DIR = libft
 # automatic
 @F = $(notdir $@)
@@ -68,7 +68,7 @@ XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/anma/.local/share/fla
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 30)
+# makefile (from 'Makefile', line 35)
 OBJS = $(addprefix $(OBJ_PATH),$(OBJS_NAME))
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-04fcadf1-710e-4af6-b902-dfa9780d2aba.sock
@@ -92,7 +92,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 VSCODE_LOG_STACK = false
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=f410002b-56b1-4476-9f19-d8841821bba6&iid=f410002b-56b1-4476-9f19-d8841821bba6&sid=f410002b-56b1-4476-9f19-d8841821bba6","uploadToServer":true}
-# makefile (from 'Makefile', line 23)
+# makefile (from 'Makefile', line 26)
 LIB = $(LIB_DIR)/libft.a
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
@@ -110,7 +110,7 @@ GIO_LAUNCHED_DESKTOP_FILE_PID = 11382
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
-# makefile (from 'Makefile', line 13)
+# makefile (from 'Makefile', line 14)
 UTIL = free.c
 # environment
 VSCODE_PIPE_LOGGING = true
@@ -136,7 +136,7 @@ VSCODE_CODE_CACHE_PATH = /home/anma/.config/Code/CachedData/899d46d82c4c95423fb7
 LOGNAME = anma
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
-# makefile (from 'Makefile', line 28)
+# makefile (from 'Makefile', line 31)
 OBJS_NAME = $(SRCS:.c=.o) $(UTIL:.c=.o)
 # environment
 ZSH = /home/anma/.oh-my-zsh
@@ -154,11 +154,11 @@ MAKELEVEL := 0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# makefile (from 'Makefile', line 10)
+# makefile (from 'Makefile', line 11)
 SRCS = prompt.c			split.c				get_path.c cmd_exec.c
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 17)
+# makefile (from 'Makefile', line 20)
 CC = gcc
 # environment
 XDG_SESSION_ID = c2
@@ -228,7 +228,7 @@ PAGER = less
 LC_ALL = C
 # makefile (from 'Makefile', line 4)
 HEADER = $(INC)minishell.h
-# makefile (from 'Makefile', line 25)
+# makefile (from 'Makefile', line 28)
 OBJ_PATH = obj/
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
@@ -258,26 +258,25 @@ VSCODE_PID = 11382
 # Directories
 
 # srcs/util (device 2054, inode 1774394): No files, no impossibilities so far.
-# . (device 2054, inode 1774355): 10 files, no impossibilities.
+# . (device 2054, inode 1774355): 9 files, no impossibilities.
 # srcs (device 2054, inode 1774378): No files, no impossibilities so far.
 
-# 10 files, no impossibilities in 3 directories.
+# 9 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
 obj/%.o: srcs/util/%.c inc/minishell.h
-#  recipe to execute (from 'Makefile', line 43):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
-obj/%.o: srcs/%.c inc/minishell.h
 #  recipe to execute (from 'Makefile', line 48):
 	@printf "\033[34;1m|\033[0;m"
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
- 
+obj/%.o: srcs/%.c inc/minishell.h
+#  recipe to execute (from 'Makefile', line 53):
+	@printf "\033[34;1m|\033[0;m"
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+
 # 2 implicit rules, 0 (0.0%) terminal.
 
 # Files
@@ -290,6 +289,7 @@ obj/get_path.o:
 
 all: libft/libft.a minishell
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -312,7 +312,7 @@ all: libft/libft.a minishell
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-31 14:51:16.508258968
+#  Last modified 2022-04-01 11:45:58.455227285
 #  File has been updated.
 #  Successfully updated.
 
@@ -326,7 +326,7 @@ minishell: obj/prompt.o obj/split.o obj/get_path.o obj/cmd_exec.o obj/free.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 43):
 	@printf "\n"
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB) -L.local/lib -lreadline
 	@echo "Compilation of \033[33;1m$(NAME)\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"
@@ -355,7 +355,7 @@ libft/libft.a:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/12=17%
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 40):
 	@make -C $(LIB_DIR)
 
 fclean: clean
@@ -363,10 +363,17 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 62):
+#  recipe to execute (from 'Makefile', line 70):
 	@rm -rf $(NAME)
 	@make -C $(LIB_DIR) fclean
 	@echo "\033[33;1m$(NAME)\033[0;1m: $(NAME) deleted\033[0m"
+
+leaks: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 61):
+	@valgrind --tool=memcheck --leak-check=full --leak-resolution=high --show-reachable=yes ./$(NAME)
 
 # Not a target:
 .DEFAULT:
@@ -397,7 +404,7 @@ run: all
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 53):
+#  recipe to execute (from 'Makefile', line 58):
 	@./$(NAME)
 
 clean:
@@ -405,9 +412,9 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 56):
+#  recipe to execute (from 'Makefile', line 64):
 	@rm -f $(OBJ)
-	@rm -rf $(OBJ_PATH)t_strncmp.c
+	@rm -rf $(OBJ_PATH)
 	@make -C $(LIB_DIR) clean
 	@echo "\033[33;1m$(NAME)\033[0;1m: objects deleted\033[0m"
 
@@ -418,19 +425,19 @@ obj/prompt.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/46=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/48=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 285 B / avg = 8 B
-# current buf: size = 8162 B / used = 285 B / count = 32 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 287 B / avg = 8 B
+# current buf: size = 8162 B / used = 287 B / count = 32 / avg = 8 B
 
-# strcache performance: lookups = 60 / hit rate = 46%
+# strcache performance: lookups = 62 / hit rate = 48%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/60=2%
-# Finished Make data base on Thu Mar 31 15:28:16 2022
+# Load=32/8192=0%, Rehash=0, Collisions=1/62=2%
+# Finished Make data base on Fri Apr  1 11:46:00 2022
 
  

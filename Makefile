@@ -1,33 +1,40 @@
-NAME = minishell
+NAME			 =	minishell
 
-INC			=	inc/
-HEADER		=	$(INC)minishell.h
+INC				=	inc/
+HEADER			=	$(INC)minishell.h
 
 
-SRCS_PATH	=	srcs/
-UTIL_PATH 	=	srcs/util/
+SRCS_PATH		=	srcs/
+UTIL_PATH 		=	srcs/util/
+#BUILTINS_PATH	=	srcs/builtins
 
-SRCS 		=	prompt.c			split.c				get_path.c \
-				cmd_exec.c
+SRCS 			=	prompt.c			split.c				get_path.c \
+					cmd_exec.c
 
-UTIL		=	free.c
+UTIL			=	free.c
 
-SRCS_NAME = $(addprefix $(SRCS_PATH),$(SRCS))
+#BUILTINS		=	cmd_cd.c			cmd_echo.c			cmd_env.c \
+					cmd_exit.c			cmd_export.c		cmd_pwd.c \
+					cmd_unset.c
 
-CC			=	gcc
+SRCS_NAME 		=	$(addprefix $(SRCS_PATH),$(SRCS))
 
-CFLAGS		=	-Wall -Wextra -Werror #-g
+CC				=	gcc
 
-LIB_DIR		=	libft
+CFLAGS			=	-Wall -Wextra -Werror #-g
 
-LIB			=	$(LIB_DIR)/libft.a
+LIB_DIR			=	libft
 
-OBJ_PATH	=	obj/
+LIB				=	$(LIB_DIR)/libft.a
 
-OBJS_NAME	=	$(SRCS:.c=.o)
-OBJS_NAME	+=	$(UTIL:.c=.o)
+OBJ_PATH		=	obj/
 
-OBJS		=	$(addprefix $(OBJ_PATH),$(OBJS_NAME))
+OBJS_NAME		=	$(SRCS:.c=.o)
+OBJS_NAME		+=	$(UTIL:.c=.o)
+#OBJS_NAME		+=	$(BUILTINS:.c=.o)
+
+
+OBJS			=	$(addprefix $(OBJ_PATH),$(OBJS_NAME))
 
 all: $(LIB) $(NAME)
 
@@ -39,15 +46,20 @@ $(NAME) : $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB) -L.local/lib -lreadline
 	@echo "Compilation of \033[33;1m$(NAME)\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"
 
+$(OBJ_PATH)%.o:	$(SRCS_PATH)%.c $(HEADER)
+	@printf "\033[34;1m|\033[0;m"
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+
 $(OBJ_PATH)%.o:	$(UTIL_PATH)%.c $(HEADER)
 	@printf "\033[34;1m|\033[0;m"
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
-$(OBJ_PATH)%.o:	$(SRCS_PATH)%.c $(HEADER)
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# $(OBJ_PATH)%.o:	$(BUILTINS_PATH)%.c $(HEADER)
+# 	@printf "\033[34;1m|\033[0;m"
+# 	@mkdir $(OBJ_PATH) 2> /dev/null || true
+# 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
 run: all
 	@./$(NAME)
