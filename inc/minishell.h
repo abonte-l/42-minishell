@@ -39,12 +39,11 @@
 # define PIPE '|'
 # define VAR '$'
 
-void	free_array(char **array);
-void	get_path(char **cmd);
+bool	get_path(char **cmd, t_dlst *list);
 void	cmd_exec(char **cmd);
 char 	**split(char *raw_data, char *limit);
 bool	iz_builtin(char *cmd);
-void	builtin_exec(char **built_in);
+void	builtin_exec(char **built_in, t_dlst *list);
 
 /*
 ** builtins functions
@@ -56,5 +55,11 @@ void	builtin_pwd(void);
 ** environment variables functions
 */
 void	dup_envp(char **envp, t_dlst *var_env_lst);
+
+/*
+** utils functions
+*/
+void	free_array(char **array);
+char	*env_2_path(t_dlst *p_list, char *path);
 
 #endif

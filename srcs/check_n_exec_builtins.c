@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:52:21 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 12:36:41 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:01:25 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 bool	iz_builtin(char *cmd)
 {
-	const char	*built_in[] = {"pwd", "cd", NULL};
+	const char	*built_in[] = {"pwd", "cd", "env", NULL};
 	int i;
 	
 	i = 0;
@@ -44,10 +44,12 @@ bool	iz_builtin(char *cmd)
 /*                                                                            */
 /* ************************************************************************** */
 
-void	builtin_exec(char **built_in)
+void	builtin_exec(char **built_in, t_dlst *list)
 {
 	if (!ft_strcmp(built_in[0], "pwd"))
 		builtin_pwd();
 	else if (!ft_strcmp(built_in[0], "cd"))
 		builtin_cd(built_in[1]);
+	else if (!strcmp(built_in[0], "env"))
+		built_in_env(list);
 }

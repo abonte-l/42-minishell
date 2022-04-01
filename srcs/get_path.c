@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:35:58 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 11:34:55 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:52:07 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	make_magic_path(char ** cmd, char *path)
+char	*make_magic_path(char ** cmd, char *path, char *bin)
 {
 	int 	i;
-	char	*bin;
+	
 	char	**path_split;
 
 	i = 0;
-	bin = NULL;
 	path_split = NULL;
 	path_split = split(path, ":");
 	free(path);
@@ -63,21 +62,28 @@ void	make_magic_path(char ** cmd, char *path)
 	free_array(path_split);
 	free(cmd[0]);
 	cmd[0] = bin;
+	return (bin);
 }
 
-void	get_path(char **cmd)
+bool	get_path(char **cmd, t_dlst *list)
 {
 	char	*path;
+	char	*bin;
 	
 	path = NULL;
-	path = ft_strdup(getenv("PATH"));
+	bin = NULL;
+	path = env_2_path(list, path);
 	if (path == NULL)
 	path = ft_strdup("/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin");
 	if (cmd[0][0] != '/' && ft_strncmp(cmd[0], "./", 2) != 0) 
-		make_magic_path(cmd, path);
+		bin = make_magic_path(cmd, path, bin);
 	else 
 	{
 		free(path);
 		path = NULL;
 	}
+	if (bin == NULL)
+		return (false);
+	else
+		return (true);
 }

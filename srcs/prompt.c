@@ -14,6 +14,7 @@ int	main(int ac, char **av, char **envp)
 	size_t	buf_size;
 	char	**cmd;
 	t_dlst	*var_env_lst;
+	char 	*env;
 
 
 	(void)ac;
@@ -21,7 +22,9 @@ int	main(int ac, char **av, char **envp)
 	buffer = NULL;
 	cmd = NULL;
 	buf_size = 2048;
-	var_env_lst = dlist_new;
+	var_env_lst = NULL;
+	env = NULL;
+	var_env_lst = dlist_new();
 	dup_envp(envp, var_env_lst);
 	buffer = (char *)ft_calloc(sizeof(char), buf_size); //01
 	if (buffer == NULL) 
@@ -34,13 +37,11 @@ int	main(int ac, char **av, char **envp)
 		cmd = split(buffer, " \n\t");
 		if (cmd[0] == NULL) //check if the command exist
 			printf("Command not found\n");
-		else if (iz_builtin(cmd[0]) == false) //check if it's a built in command
-		{
-			get_path(cmd); //get path of th non built in command
-			cmd_exec(cmd); // execute the command
-		}
+		else if (iz_builtin(cmd[0]) == true) //check if it's a built in command
+			builtin_exec(cmd, var_env_lst);//execute the built in command
 		else
-			builtin_exec(cmd); //execute the built in command
+			if (get_path(cmd, var_env_lst) == true) 
+				exec_cmd(cmd, envp);
 		free_array(cmd);
 	}
 	printf("Bye \n");

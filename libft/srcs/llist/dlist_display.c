@@ -7,7 +7,7 @@ void dlist_display(t_dlst *p_list)
         struct s_node *p_temp = p_list->head;
         while (p_temp != NULL)
         {
-            printf("%d -> ", p_temp->data);
+            printf("%s -> \n", p_temp->data);
             fflush(stdout);
             p_temp = p_temp->next;
         }
