@@ -52,4 +52,9 @@ void	builtin_exec(char **built_in);
 void	builtin_cd(char *path);
 void	builtin_pwd(void);
 
+/*
+** environment variables functions
+*/
+void	dup_envp(char **envp, t_dlst *var_env_lst);
+
 #endif

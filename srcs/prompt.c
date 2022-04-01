@@ -22,7 +22,7 @@ int	main(int ac, char **av, char **envp)
 	cmd = NULL;
 	buf_size = 2048;
 	var_env_lst = dlist_new;
-	duplicate_env(envp, var_env_lst);
+	dup_envp(envp, var_env_lst);
 	buffer = (char *)ft_calloc(sizeof(char), buf_size); //01
 	if (buffer == NULL) 
 	{
