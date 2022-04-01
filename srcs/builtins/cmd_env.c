@@ -6,13 +6,13 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:56:30 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 15:28:04 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 16:25:59 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	built_in_env(t_dlst *p_list)
+void	builtin_env(t_dlst *p_list)
 {
 	if (p_list != NULL)
     {
@@ -23,5 +23,4 @@ void	built_in_env(t_dlst *p_list)
 		    p_temp = p_temp->next;
         }
     }
-    printf("NULL\n");
 }

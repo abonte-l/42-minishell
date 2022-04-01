@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmd_exec.c                                         :+:      :+:    :+:   */
+/*   cmd_exec_env.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:18:24 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 16:19:35 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 16:23:19 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	cmd_exec(char **cmd)
+void	cmd_exec_env(char **cmd, char **envp)
 {
 	pid_t	pid;
 	int		status;
@@ -40,7 +40,7 @@ void	cmd_exec(char **cmd)
 	} 
 	else 
 	{
-		if (execve(cmd[0], cmd, NULL) == -1)
+		if (execve(cmd[0], cmd, envp) == -1)
 			perror("shell");
 		exit(EXIT_FAILURE);
 	}

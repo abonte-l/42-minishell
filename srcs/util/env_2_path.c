@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 15:21:55 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 15:32:04 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:59:06 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ char	*env_2_path(t_dlst *p_list, char *path)
 		    p_temp = p_temp->next;
         }
     }
+    return (path);
 }

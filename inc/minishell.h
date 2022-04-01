@@ -40,6 +40,7 @@
 # define VAR '$'
 
 bool	get_path(char **cmd, t_dlst *list);
+void	cmd_exec_env(char **cmd, char **envp);
 void	cmd_exec(char **cmd);
 char 	**split(char *raw_data, char *limit);
 bool	iz_builtin(char *cmd);
@@ -50,6 +51,7 @@ void	builtin_exec(char **built_in, t_dlst *list);
 */
 void	builtin_cd(char *path);
 void	builtin_pwd(void);
+void	builtin_env(t_dlst *p_list);
 
 /*
 ** environment variables functions

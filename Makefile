@@ -8,13 +8,15 @@ SRCS_PATH		=	srcs/
 UTIL_PATH 		=	srcs/util/
 BUILTINS_PATH	=	srcs/builtins/
 
-SRCS 			=	prompt.c			split.c						get_path.c \
-					cmd_exec.c			check_n_exec_builtins.c		env_var.c
+SRCS 			=	prompt.c			split.c			get_path.c \
+					cmd_exec_env.c		cmd_exec.c		check_n_exec_builtins.c\
+					env_var.c
+
 
 UTIL			=	free.c				env_2_path.c
 
-BUILTINS		=	cmd_cd.c			cmd_echo.c					cmd_env.c \
-					cmd_exit.c			cmd_export.c				cmd_pwd.c \
+BUILTINS		=	cmd_cd.c			cmd_echo.c		cmd_env.c \
+					cmd_exit.c			cmd_export.c	cmd_pwd.c \
 					cmd_unset.c
 
 SRCS_NAME 		=	$(addprefix $(SRCS_PATH),$(SRCS))
