@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 13:35:56 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/02 13:43:06 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/02 14:14:18 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 
 void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 {
-	while ((buffer = readline("$> ")) != NULL)
+	while ((buffer = readline("🌸minishell🌸$> ")) != NULL)
 	{
 		cmd = split(buffer, " \n\t");
 		if (cmd[0] == NULL)
