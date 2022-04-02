@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   prompt.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/02 13:35:56 by abonte-l          #+#    #+#             */
+/*   Updated: 2022/04/02 13:43:06 by abonte-l         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
@@ -5,23 +16,23 @@
 /*                              MAIN FUNCTION                                 */
 /*                                                                            */
 /* in main:                                                                   */
-/* lines 74-75 : Duplicate envp in the linked list                            */
-/* lines 76-77 : Allocation of the buffer which stores the command            */
+/* line  70    : Duplicate envp in the linked list                            */
+/* lines 71-76 : Allocation of the buffer which stores the command            */
 /*               entered by the user                                          */
-/* ---> make_magic_loop function                                              */
-/* lines XX-XX : Aknowledging user that the prompt is closing then            */
+/* ---> line 77 : make_magic_loop function                                    */
+/* lines 78-79  : Aknowledging user that the prompt is closing then           */
 /*               free the buffer                                              */
 /*                                                                            */
 /* in make_magic_loop:                                                        */
-/* line 30     : Writing the prompt                                           */
-/* lines 30-42 : Loop reading STDIN                                           */
-/* line 32     : Spliting the string received to have command and arguments   */
+/* line 41     : Writing the prompt                                           */
+/* lines 41-53 : Loop reading STDIN                                           */
+/* line 43     : Spliting the string received to have command and arguments   */
 /*               (and or options) separate                                    */
-/* line 33     : Check if the command exist                                   */
-/* line 35     : Check if it's a built in command                             */
-/* line 36     : Execute the built in command                                 */
-/* line 37     : Check if the binary                                          */
-/* line 40     : Exec cmd with absolute path already gave in the prompt       */
+/* line 44     : Check if the command exist                                   */
+/* line 46     : Check if it's a built in command                             */
+/* line 47     : Execute the built in command                                 */
+/* line 48     : Check if the binary                                          */
+/* line 51     : Exec cmd with absolute path already gave in the prompt       */
 /*                                                                            */
 /* ************************************************************************** */
 
