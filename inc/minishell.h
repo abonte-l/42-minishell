@@ -32,6 +32,7 @@
 # define SPACE ' '
 # define TAB '\t'
 # define EOL '\n'
+# define EQUAL '='
 # define S_QUOTE '\''
 # define D_QUOTE '"'
 # define R_OUT '>'
@@ -54,6 +55,7 @@ void	builtin_pwd(void);
 void	builtin_env(t_dlst *p_list);
 void	builtin_echo(int option, char **built_in);
 void	builtin_unset(char **built_in, t_dlst *list);
+void	builtin_export(char **built_in, t_dlst *list);
 void	builtin_exit(void);
 
 /*
