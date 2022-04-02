@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 11:41:55 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/02 11:50:11 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/02 13:02:48 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	indexation_env(t_dlst *list)
 	
 	i = 0;
 	if (list != NULL)
-    {
-        p_temp = list->head;
-        while (p_temp != NULL)
-        {
-            p_temp->index = i;
-		    p_temp = p_temp->next;
+	{
+		p_temp = list->head;
+		while (p_temp != NULL)
+		{
+			p_temp->index = i;
+			p_temp = p_temp->next;
 			i++;
-        }
-    }
+		}
+	}
 }

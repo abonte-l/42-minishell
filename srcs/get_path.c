@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:35:58 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 16:25:05 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/02 13:05:33 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*make_magic_path(char ** cmd, char *path, char *bin, char **path_split)
+char	*make_magic_path(char ** cmd, char *bin, char **path_split)
 {
 	int 	i;
 	
-	
-
 	i = 0;
-	
-	free(path);
-	path = NULL;
 	while (path_split[i]) 
 	{
 		bin = (char *)ft_calloc(sizeof(char),
@@ -81,7 +76,7 @@ bool	get_path(char **cmd, t_dlst *list)
 		path_split = split(path, ":");
 		free(path);
 		path = NULL;
-		bin = make_magic_path(cmd, path, bin, path_split);
+		bin = make_magic_path(cmd, bin, path_split);
 	}
 	if (bin == NULL)
 		return (false);

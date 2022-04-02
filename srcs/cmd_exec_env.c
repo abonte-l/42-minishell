@@ -6,14 +6,14 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:18:24 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 16:23:19 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/02 13:00:33 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
 /* ************************************************************************** */
-/*                             CMD_EXEC FUNCTION                              */
+/*                           CMD_EXEC_ENV FUNCTION                            */
 /*                                                                            */
 /* lines 33-35 : forking parent and child processes                           */
 /* lines 36-46 : If the fork was successful the parent process                */
