@@ -10,18 +10,18 @@ STR_PATH	=	$(SRC_PATH)str/
 CHAR_PATH	=	$(SRC_PATH)char/
 LLIST_PATH	=	$(SRC_PATH)llist/
 
-MEM			=	ft_bzero.c			ft_memcpy.c 		ft_calloc.c \
+MEM			=	ft_bzero.c				ft_memcpy.c 			ft_calloc.c \
 				ft_realloc.c
 				
-STR			=	ft_strlen.c			ft_strncmp.c		ft_strdup.c	\
-				ft_strdup.c			ft_strtok.c			ft_strcat.c \
-				ft_strcmp.c			ft_putstr.c			ft_putstr_fd.c 
+STR			=	ft_strlen.c				ft_strncmp.c			ft_strdup.c	\
+				ft_strdup.c				ft_strtok.c				ft_strcat.c \
+				ft_strcmp.c				ft_putstr.c				ft_putstr_fd.c 
 
-CHAR		=	ft_putchar.c		ft_putchar_fd.c
+CHAR		=	ft_putchar.c			ft_putchar_fd.c	
 
-LLIST		=	dlist_add_end.c		dlist_add_start.c	dlist_new.c \
-				dlist_delete.c		dlist_display.c		new_node_start.c \
-				new_node_end.c	
+LLIST		=	dlist_add_end.c			dlist_add_start.c		dlist_display.c\
+				dlist_add_middle.c		new_node_start.c 		new_node_end.c\
+				dlist_delete_list.c		dlist_delete_node.c		dlist_new.c
 
 OBJ_PATH	=	obj/
 
