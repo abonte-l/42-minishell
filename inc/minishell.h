@@ -53,6 +53,7 @@ void	builtin_cd(char *path);
 void	builtin_pwd(void);
 void	builtin_env(t_dlst *p_list);
 void	builtin_echo(int option, char **built_in);
+void	builtin_unset(char **built_in, t_dlst *list);
 void	builtin_exit(void);
 
 /*
@@ -65,5 +66,6 @@ void	dup_envp(char **envp, t_dlst *var_env_lst);
 */
 void	free_array(char **array);
 char	*env_2_path(t_dlst *p_list, char *path);
+void	indexation_env(t_dlst *list);
 
 #endif

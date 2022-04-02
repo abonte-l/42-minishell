@@ -1,43 +1,46 @@
 #include "../inc/libft.h"
 
-t_dlst *dlist_add_middle(t_dlst *p_list, char *data, int position)
+t_dlst *dlist_add_middle(t_dlst *list, char *data, int position)
 {
-    if (p_list != NULL)
+    if (list != NULL)
     {
-        struct node *p_temp = p_list->p_head;
+        t_node  *p_temp;
+        t_node  *new_node;
+
+        p_temp = list->head;
         int i = 1;
         while (p_temp != NULL && i <= position)
         {
             if (position == i)
             {
-                if (p_temp->p_next == NULL)
+                if (p_temp->next == NULL)
                 {
-                    p_list = dlist_append(p_list, data);
+                    list = dlist_add_end(list, data);
                 }
-                else if (p_temp->p_prev == NULL)
+                else if (p_temp->prev == NULL)
                 {
-                    p_list = dlist_prepend(p_list, data);
+                    list = dlist_add_start(list, data);
                 }
                 else
                 {
-                    struct node *p_new = malloc(sizeof *p_new);;
-                    if (p_new != NULL)
+                    new_node = malloc(sizeof *new_node);;
+                    if (new_node != NULL)
                     {
-                        p_new->data = data;
-                        p_temp->p_next->p_prev = p_new;
-                        p_temp->p_prev->p_next = p_new;
-                        p_new->p_prev = p_temp->p_prev;
-                        p_new->p_next = p_temp;
-                        p_list->length++;
+                        new_node->data = data;
+                        p_temp->next->prev = new_node;
+                        p_temp->prev->next = new_node;
+                        new_node->prev = p_temp->prev;
+                        new_node->next = p_temp;
+                        list->length++;
                     }
                 }
             }
             else
             {
-                p_temp = p_temp->p_next;
+                p_temp = p_temp->next;
             }
             i++;
         }
     }
-    return p_list;
+    return list;
 }

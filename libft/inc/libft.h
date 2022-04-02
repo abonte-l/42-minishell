@@ -47,6 +47,7 @@ typedef struct		s_dlst
 t_dlst	*dlist_new(void);
 t_dlst	*dlist_add_end(t_dlst *list, char *data);
 t_dlst	*dlist_add_start(t_dlst *list, char *data);
+t_dlst	*dlist_delete_node(t_dlst *list, char *data);
 void 	dlist_delete(t_dlst **list);
 void	new_node_end(t_dlst *list, t_node *new_node, char *data);
 void	new_node_start(t_dlst *list, t_node *new_node, char *data);
