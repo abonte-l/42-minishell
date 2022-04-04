@@ -76,6 +76,7 @@ void	ft_putstr_fd(char const *s, int fd);
 /*
 ** char functions
 */
+int		ft_izalpha(int c);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 

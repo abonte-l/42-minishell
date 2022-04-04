@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sat Apr  2 12:06:47 2022
+# Make data base, printed on Mon Apr  4 15:04:35 2022
 
 # Variables
 
@@ -184,6 +185,7 @@ INC = inc/
 LANGUAGE = fr_FR
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+ 
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-779fd3af-1.63.2-main.sock
 # makefile
@@ -239,7 +241,7 @@ LANG = C
 # environment
 VSCODE_PID = 4998
 # variable set hash-table stats:
-# Load=114/1024=11%, Rehash=0, Collisions=11/167=7%
+# Load=114/1024=11%, Rehash=0, Collisions=11/171=6%
 
 # Pattern-specific Variable Values
 
@@ -247,13 +249,12 @@ VSCODE_PID = 4998
 
 # Directories
 
-# srcs/util (device 2054, inode 1774394): 5 files, no impossibilities.
-# srcs/builtins (device 2054, inode 1774792): 9 files, no impossibilities so far.
-# . (device 2054, inode 1774355): 11 files, no impossibilities.
-# inc (device 2054, inode 1774220): 2 files, no impossibilities so far.
-# srcs (device 2054, inode 1774378): 11 files, no impossibilities.
+# srcs/util (device 2054, inode 1774394): No files, no impossibilities so far.
+# srcs/builtins (device 2054, inode 1774792): No files, no impossibilities so far.
+# . (device 2054, inode 1774355): 10 files, no impossibilities.
+# srcs (device 2054, inode 1774378): No files, no impossibilities so far.
 
-# 38 files, no impossibilities in 5 directories.
+# 10 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
@@ -277,37 +278,19 @@ obj/%.o: srcs/builtins/%.c inc/minishell.h
 
 # 3 implicit rules, 0 (0.0%) terminal.
 
- 
 # Files
 
-obj/get_path.o: srcs/get_path.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'get_path'
-#  Last modified 2022-04-02 12:05:49.838304106
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 52):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/get_path.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-srcs/get_path.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 16:25:05.112019505
-#  File has been updated.
-#  Successfully updated.
-
-obj/env_2_path.o: srcs/util/env_2_path.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'env_2_path'
-#  Last modified 2022-04-02 12:05:50.346311494
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 57):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+obj/env_2_path.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all: libft/libft.a minishell
 #  Phony target (prerequisite of .PHONY).
@@ -315,59 +298,39 @@ all: libft/libft.a minishell
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+ 
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
-obj/cmd_echo.o: srcs/builtins/cmd_echo.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_echo'
-#  Last modified 2022-04-02 12:05:50.514313937
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 62):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/cmd_echo.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 .PHONY: all clean fclean re run
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/cmd_export.o: srcs/builtins/cmd_export.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_export'
-#  Last modified 2022-04-02 12:05:50.722316962
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 62):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
-obj/cmd_exec_env.o: srcs/cmd_exec_env.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_exec_env'
-#  Last modified 2022-04-02 12:05:49.926305386
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 52):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/cmd_export.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-srcs/builtins/cmd_cd.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 12:12:40.707249392
-#  File has been updated.
-#  Successfully updated.
+obj/cmd_exec_env.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-srcs/cmd_exec_env.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 16:23:19.386562193
-#  File has been updated.
-#  Successfully updated.
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
@@ -376,95 +339,66 @@ Makefile:
 #  File has been updated.
 #  Successfully updated.
 
-obj/cmd_exec.o: srcs/cmd_exec.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_exec'
-#  Last modified 2022-04-02 12:05:50.010306608
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 52):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
 # Not a target:
-srcs/cmd_exec.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 16:19:35.183468493
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-srcs/util/env_2_path.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 15:59:06.834250776
-#  File has been updated.
-#  Successfully updated.
+obj/cmd_exec.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 minishell: obj/prompt.o obj/split.o obj/get_path.o obj/cmd_exec_env.o obj/cmd_exec.o obj/check_n_exec_builtins.o obj/env_var.o obj/free.o obj/env_2_path.o obj/cmd_cd.o obj/cmd_echo.o obj/cmd_env.o obj/cmd_exit.o obj/cmd_export.o obj/cmd_pwd.o obj/cmd_unset.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-04-02 12:05:50.942320161
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 47):
 	@printf "\n"
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB) -L.local/lib -lreadline
 	@echo "Compilation of \033[33;1m$(NAME)\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"
 
-obj/env_var.o: srcs/env_var.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'env_var'
-#  Last modified 2022-04-02 12:05:50.17830905
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 52):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
 # Not a target:
-srcs/builtins/cmd_echo.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 17:04:50.900446911
-#  File has been updated.
-#  Successfully updated.
+obj/env_var.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libft/libft.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-04-02 12:05:49.578300325
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := libft/libft.a
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+ 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/12=17%
 #  recipe to execute (from 'Makefile', line 44):
 	@make -C $(LIB_DIR)
 
-obj/cmd_env.o: srcs/builtins/cmd_env.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_env'
-#  Last modified 2022-04-02 12:05:50.602315217
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 62):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/cmd_env.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-srcs/env_var.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 14:42:33.53093614
-#  File has been updated.
-#  Successfully updated.
-
-obj/cmd_exit.o: srcs/builtins/cmd_exit.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_exit'
-#  Last modified 2022-04-02 12:05:50.690316496
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 62):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+obj/cmd_exit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -476,13 +410,6 @@ fclean: clean
 	@make -C $(LIB_DIR) fclean
 	@echo "\033[33;1m$(NAME)\033[0;1m: $(NAME) deleted\033[0m"
 
-# Not a target:
-srcs/builtins/cmd_export.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-03-31 19:06:55.251563202
-#  File has been updated.
-#  Successfully updated.
-
 leaks: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -490,16 +417,11 @@ leaks: all
 #  recipe to execute (from 'Makefile', line 70):
 	@valgrind --tool=memcheck --leak-check=full --leak-resolution=high --show-reachable=yes ./$(NAME)
 
-obj/cmd_pwd.o: srcs/builtins/cmd_pwd.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_pwd'
-#  Last modified 2022-04-02 12:05:50.802318125
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 62):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/cmd_pwd.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -507,27 +429,17 @@ obj/cmd_pwd.o: srcs/builtins/cmd_pwd.c inc/minishell.h
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/free.o: srcs/util/free.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'free'
-#  Last modified 2022-04-02 12:05:50.266310331
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 57):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/free.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-obj/cmd_unset.o: srcs/builtins/cmd_unset.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_unset'
-#  Last modified 2022-04-02 12:05:50.886319346
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 62):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/cmd_unset.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -535,27 +447,22 @@ re: fclean all
 #  File does not exist.
 #  File has not been updated.
 
-obj/split.o: srcs/split.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'split'
-#  Last modified 2022-04-02 12:05:49.750302826
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 52):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+# Not a target:
+obj/split.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 run: all
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 67):
 	@./$(NAME)
 
 clean:
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -567,115 +474,37 @@ clean:
 	@echo "\033[33;1m$(NAME)\033[0;1m: objects deleted\033[0m"
 
 # Not a target:
-srcs/split.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 11:38:28.322135662
-#  File has been updated.
-#  Successfully updated.
+obj/prompt.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-srcs/builtins/cmd_env.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-02 11:47:48.623385176
-#  File has been updated.
-#  Successfully updated.
+obj/cmd_cd.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-inc/minishell.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 18:25:54.186188799
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-srcs/builtins/cmd_exit.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 18:26:03.542229253
-#  File has been updated.
-#  Successfully updated.
-
-obj/prompt.o: srcs/prompt.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'prompt'
-#  Last modified 2022-04-02 12:05:49.666301605
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 52):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
-# Not a target:
-srcs/builtins/cmd_pwd.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 12:12:31.783191772
-#  File has been updated.
-#  Successfully updated.
-
-obj/cmd_cd.o: srcs/builtins/cmd_cd.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cmd_cd'
-#  Last modified 2022-04-02 12:05:50.430312715
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 62):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
-# Not a target:
-srcs/prompt.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 16:30:47.7967386
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-srcs/util/free.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-03-31 14:25:23.351
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-srcs/builtins/cmd_unset.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-02 12:01:40.258587205
-#  File has been updated.
-#  Successfully updated.
-
-obj/check_n_exec_builtins.o: srcs/check_n_exec_builtins.c inc/minishell.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'check_n_exec_builtins'
-#  Last modified 2022-04-02 12:05:50.098307888
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 52):
-	@printf "\033[34;1m|\033[0;m"
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
-# Not a target:
-srcs/check_n_exec_builtins.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-01 18:27:51.351728687
-#  File has been updated.
-#  Successfully updated.
+obj/check_n_exec_builtins.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=45/1024=4%, Rehash=0, Collisions=1/182=1%
+# Load=28/1024=3%, Rehash=0, Collisions=0/70=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 114 / storage = 1508 B / avg = 13 B
-# current buf: size = 8162 B / used = 1508 B / count = 114 / avg = 13 B
+# strcache buffers: 1 (0) / strings = 46 / storage = 510 B / avg = 11 B
+# current buf: size = 8162 B / used = 510 B / count = 46 / avg = 11 B
 
-# strcache performance: lookups = 202 / hit rate = 43%
+# strcache performance: lookups = 78 / hit rate = 41%
 # hash-table stats:
-# Load=114/8192=1%, Rehash=0, Collisions=5/202=2%
-# Finished Make data base on Sat Apr  2 12:06:47 2022
+# Load=46/8192=1%, Rehash=0, Collisions=1/78=1%
+# Finished Make data base on Mon Apr  4 15:04:35 2022
 
  
