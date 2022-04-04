@@ -15,7 +15,9 @@ MEM			=	ft_bzero.c				ft_memcpy.c 			ft_calloc.c \
 				
 STR			=	ft_strlen.c				ft_strncmp.c			ft_strdup.c	\
 				ft_strdup.c				ft_strtok.c				ft_strcat.c \
-				ft_strcmp.c				ft_putstr.c				ft_putstr_fd.c 
+				ft_strcmp.c				ft_putstr.c				ft_putstr_fd.c \
+				ft_strchr.c				ft_strcpy.c				ft_strndup.c \
+				ft_strncpy.c
 
 CHAR		=	ft_putchar.c			ft_putchar_fd.c			ft_izalpha.c \
 				ft_izdigit.c			ft_izalnum.c

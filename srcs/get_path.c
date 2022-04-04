@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:35:58 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/02 13:05:33 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/04 18:07:15 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ char	*make_magic_path(char ** cmd, char *bin, char **path_split)
 		(strlen(path_split[i]) + 1 + strlen(cmd[0]) + 1));
 		if (bin == NULL)
 			break;
-		strcat(bin, path_split[i]);
-		strcat(bin, "/");
+		ft_strcat(bin, path_split[i]);
+		ft_strcat(bin, "/");
 		ft_strcat(bin, cmd[0]);
 		if (access(bin, F_OK) == 0)
 			break ;

@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 13:35:56 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/04 15:14:50 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/04 17:59:17 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 	{
 		dup_buffer = ft_strdup(buffer);
 		cmd = split(dup_buffer, " \n\t");
-		//iz_special_char(); idee pour gerer les variable d'environnement ou autre (je pense besoin de izalpha a voir)
+		cmd = iz_special_char(env_list, cmd); //idee pour gerer les variables d'environnement ou autre (je pense besoin de izalpha a voir)
 		if (cmd[0] == NULL)
 			printf("Command not found\n");	
 		else if (iz_builtin(cmd[0]) == true)

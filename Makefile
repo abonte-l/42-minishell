@@ -10,7 +10,7 @@ BUILTINS_PATH	=	srcs/builtins/
 
 SRCS 			=	prompt.c			split.c			get_path.c \
 					cmd_exec_env.c		cmd_exec.c		check_builtins.c \
-					exec_builtins.c
+					exec_builtins.c		iz_special_char.c
 
 UTIL			=	free.c				env_2_path.c	dup_envp.c
 

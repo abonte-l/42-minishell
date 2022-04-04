@@ -1,20 +1,18 @@
 #include "../inc/libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*copy;
 	int		i;
 
 	i = 0;
-	while (s1[i])
-		++i;
-	copy = malloc(sizeof(char) * (i + 1));
+	copy = malloc(sizeof(char) * (n + 1));
 	if (!copy)
 		return (0);
-	i = 0;
-	while (s1[i])
+	while (n)
 	{
 		copy[i] = s1[i];
+		n--;
 		i++;
 	}
 	copy[i] = '\0';

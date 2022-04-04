@@ -29,15 +29,15 @@
 # define INT_MIN -2147483648
 # define INT_ERROR 2147483648
 
-# define SPACE ' '
-# define TAB '\t'
+# define D_QUOTE '"'
 # define EOL '\n'
 # define EQUAL '='
-# define S_QUOTE '\''
-# define D_QUOTE '"'
-# define R_OUT '>'
-# define R_IN '<'
 # define PIPE '|'
+# define R_IN '<'
+# define R_OUT '>'
+# define SPACE ' '
+# define S_QUOTE '\''
+# define TAB '\t'
 # define VAR '$'
 
 bool	get_path(char **cmd, t_dlst *list);
@@ -46,6 +46,7 @@ void	cmd_exec(char **cmd);
 char 	**split(char *raw_data, char *limit);
 bool	iz_builtin(char *cmd);
 void	builtin_exec(char **built_in, t_dlst *list);
+char 	**iz_special_char(t_dlst *list, char **cmd);
 
 /*
 ** builtins functions

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_n_exec_builtins.c                            :+:      :+:    :+:   */
+/*   check_builtins.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:52:21 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/02 13:01:05 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/04 16:09:19 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,36 +36,4 @@ bool	iz_builtin(char *cmd)
 		i++;
 	}
 	return (false);
-}
-
-/* ************************************************************************** */
-/*                           BUILTIN_EXEC FUNCTION                            */
-/*                                                                            */
-/*  lines 49-52 : Check and dispatch to execute the right built in command    */
-/*                                                                            */
-/* ************************************************************************** */
-
-void	builtin_exec(char **built_in, t_dlst *list)
-{
-	int	option;
-	
-	option = FALSE;
-	if (!ft_strcmp(built_in[0], "pwd"))
-		builtin_pwd();
-	else if (!ft_strcmp(built_in[0], "cd"))
-		builtin_cd(built_in[1]);
-	else if (!strcmp(built_in[0], "env"))
-		builtin_env(list);
-	else if (!ft_strcmp(built_in[0], "exit"))
-		builtin_exit();
-	else if (!strcmp(built_in[0], "unset"))
-		builtin_unset(built_in, list);
-	else if (!strcmp(built_in[0], "export"))
-		builtin_export(built_in, list);
-	else if (!strcmp(built_in[0], "echo"))
-	{
-		if (!strcmp(built_in[1], "-n"))
-			option = TRUE;
-		builtin_echo(option, built_in);
-	}	
 }
