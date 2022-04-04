@@ -29,10 +29,10 @@ exécutée au premier plan.
 		- [ ] ctrl-\  
 
 - [x] les builtins suivantes
-		- [x] echo et l’option -n
-		- [x] cd uniquement avec un chemin relatif ou absolu
-		- [x] pwd sans aucune option
-		- [x] export sans aucune option
-		- [x] unset sans aucune option
-		- [x] env sans aucune option ni argument
-		- [x] exit sans aucune option
+		- [x] echo et l’option -n  
+		- [x] cd uniquement avec un chemin relatif ou absolu  
+		- [x] pwd sans aucune option  
+		- [x] export sans aucune option  
+		- [x] unset sans aucune option  
+		- [x] env sans aucune option ni argument  
+		- [x] exit sans aucune option  
