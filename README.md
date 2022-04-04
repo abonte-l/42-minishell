@@ -28,7 +28,7 @@ exécutée au premier plan.
 		[X] ctrl-D  
 		[] ctrl-\  
 
-[] les builtins suivantes
+[X] les builtins suivantes
 		[X] echo et l’option -n
 		[X] cd uniquement avec un chemin relatif ou absolu
 		[X] pwd sans aucune option
