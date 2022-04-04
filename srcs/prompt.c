@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 13:35:56 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/04 10:44:42 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/04 11:55:18 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,49 @@
 /*                              MAIN FUNCTION                                 */
 /*                                                                            */
 /* in main:                                                                   */
-/* line  70    : Duplicate envp in the linked list                            */
-/* lines 71-76 : Allocation of the buffer which stores the command            */
-/*               entered by the user                                          */
-/* ---> line 77 : make_magic_loop function                                    */
-/* lines 78-79  : Aknowledging user that the prompt is closing then           */
+/* line  77     : Duplicate envp in the linked list                           */
+/* lines 78-83  : Allocation of the buffer which stores the command           */
+/*                entered by the user                                         */
+/* ---> line 84 : make_magic_loop function                                    */
+/* lines 85-86  : Aknowledging user that the prompt is closing then           */
 /*               free the buffer                                              */
 /*                                                                            */
 /* in make_magic_loop:                                                        */
-/* line 41     : Writing the prompt                                           */
-/* lines 41-53 : Loop reading STDIN                                           */
-/* line 43     : Spliting the string received to have command and arguments   */
+/* line 45     : Writing the prompt                                           */
+/* lines 45-60 : Loop reading STDIN                                           */
+/* line  47    : Duplicate buffer to work on a copy and still have the        */
+/*               original untouched for the history                           */
+/* line 48     : Spliting the string received to have command and arguments   */
 /*               (and or options) separate                                    */
-/* line 44     : Check if the command exist                                   */
-/* line 46     : Check if it's a built in command                             */
-/* line 47     : Execute the built in command                                 */
-/* line 48     : Check if the binary                                          */
-/* line 51     : Exec cmd with absolute path already gave in the prompt       */
+/* line 49     : Check if the command exist                                   */
+/* line 51     : Check if it's a built in command                             */
+/* line 52     : Execute the built in command                                 */
+/* line 53     : Check if the binary                                          */
+/* line 56     : Exec cmd with absolute path already gave in the prompt       */
+/* line 57     : Add the current command to the history                       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 {
+	char *dup_buffer;
+
 	while ((buffer = readline("🌸minishell $> ")) != NULL)
 	{
-		cmd = split(buffer, " \n\t");
+		dup_buffer = ft_strdup(buffer);
+		cmd = split(dup_buffer, " \n\t");
 		if (cmd[0] == NULL)
-			printf("Command not found\n");
+			printf("Command not found\n");	
 		else if (iz_builtin(cmd[0]) == true)
 			builtin_exec(cmd, env_list);
 		else if (get_path(cmd, env_list) == true)
 			cmd_exec_env(cmd, envp);
 		else
 			cmd_exec(cmd);
+		add_history(buffer);
 		free_array(cmd);
+		free(dup_buffer);
+		dup_buffer = NULL;
 	}
 }
 
@@ -65,7 +74,6 @@ int	main(int ac, char **av, char **envp)
 	buffer = NULL;
 	cmd = NULL;
 	buf_size = 2048;
-	var_env_lst = NULL;
 	var_env_lst = dlist_new();
 	dup_envp(envp, var_env_lst);
 	buffer = (char *)ft_calloc(sizeof(char), buf_size);
