@@ -59,14 +59,10 @@ void	builtin_export(char **built_in, t_dlst *list);
 void	builtin_exit(void);
 
 /*
-** environment variables functions
-*/
-void	dup_envp(char **envp, t_dlst *var_env_lst);
-
-/*
 ** utils functions
 */
 void	free_array(char **array);
+void	dup_envp(char **envp, t_dlst *var_env_lst);
 char	*env_2_path(t_dlst *p_list, char *path);
 void	indexation_env(t_dlst *list);
 
