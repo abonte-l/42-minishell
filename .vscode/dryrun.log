@@ -1,6 +1,7 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/anma/Bureau/Minishell'
 make -C libft
+ 
 printf "\033[34;1m|\033[0;m"
 mkdir obj/ 2> /dev/null || true
 gcc -Wall -Wextra -Werror -g -Iinc/ -c srcs/prompt.c -o obj/prompt.o
@@ -33,6 +34,7 @@ mkdir obj/ 2> /dev/null || true
 gcc -Wall -Wextra -Werror -g -Iinc/ -c srcs/builtins/cmd_cd.c -o obj/cmd_cd.o
 printf "\033[34;1m|\033[0;m"
 mkdir obj/ 2> /dev/null || true
+ 
 gcc -Wall -Wextra -Werror -g -Iinc/ -c srcs/builtins/cmd_echo.c -o obj/cmd_echo.o
 printf "\033[34;1m|\033[0;m"
 mkdir obj/ 2> /dev/null || true
@@ -49,6 +51,7 @@ gcc -Wall -Wextra -Werror -g -Iinc/ -c srcs/builtins/cmd_pwd.c -o obj/cmd_pwd.o
 printf "\033[34;1m|\033[0;m"
 mkdir obj/ 2> /dev/null || true
 gcc -Wall -Wextra -Werror -g -Iinc/ -c srcs/builtins/cmd_unset.c -o obj/cmd_unset.o
+ 
 printf "\n"
 gcc -Wall -Wextra -Werror -g -o minishell obj/prompt.o obj/split.o obj/get_path.o obj/cmd_exec_env.o obj/cmd_exec.o obj/check_n_exec_builtins.o obj/env_var.o obj/free.o obj/env_2_path.o obj/cmd_cd.o obj/cmd_echo.o obj/cmd_env.o obj/cmd_exit.o obj/cmd_export.o obj/cmd_pwd.o obj/cmd_unset.o libft/libft.a -L.local/lib -lreadline
 echo "Compilation of \033[33;1mminishell\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"
