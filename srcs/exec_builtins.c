@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 15:37:35 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/04 15:38:22 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/04/05 11:55:42 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ void	builtin_exec(char **built_in, t_dlst *list)
 		if (!strcmp(built_in[1], "-n"))
 			option = TRUE;
 		builtin_echo(option, built_in);
-	}	
+	}
 }
