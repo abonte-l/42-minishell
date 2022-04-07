@@ -1,10 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/anma/Bureau/Minishell'
-printf "\033[34;1m|\033[0;m"
-mkdir obj/ 2> /dev/null || true
-gcc -Wall -Wextra -Werror -g -Iinc/ -c srcs/util/iz_special_char.c -o obj/iz_special_char.o
-printf "\n"
-gcc -Wall -Wextra -Werror -g -o minishell obj/prompt.o obj/split.o obj/get_path.o obj/cmd_exec_env.o obj/cmd_exec.o obj/check_builtins.o obj/exec_builtins.o obj/iz_special_char.o obj/free.o obj/env_2_path.o obj/dup_envp.o obj/cmd_cd.o obj/cmd_echo.o obj/cmd_env.o obj/cmd_exit.o obj/cmd_export.o obj/cmd_pwd.o obj/cmd_unset.o libft/libft.a -L.local/lib -lreadline
-echo "Compilation of \033[33;1mminishell\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"
+make: Nothing to be done for 'all'.
 make: Leaving directory '/home/anma/Bureau/Minishell'
  

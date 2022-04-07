@@ -33,12 +33,21 @@
 # define EOL '\n'
 # define EQUAL '='
 # define PIPE '|'
+# define PLUS '+'
 # define R_IN '<'
 # define R_OUT '>'
 # define SPACE ' '
 # define S_QUOTE '\''
 # define TAB '\t'
 # define VAR '$'
+
+typedef struct		s_export
+{
+	char	*tmp;
+	char	*tmp_2;
+	int		i;
+	int		iz_valid;
+}					t_export;
 
 bool	get_path(char **cmd, t_dlst *list);
 void	cmd_exec_env(char **cmd, char **envp);
@@ -66,5 +75,7 @@ void	free_array(char **array);
 void	dup_envp(char **envp, t_dlst *var_env_lst);
 char	*env_2_path(t_dlst *p_list, char *path);
 void	indexation_env(t_dlst *list);
+char	*trim_str(char *str, int i);
+void	init_export(char **built_in, t_export *export);
 
 #endif

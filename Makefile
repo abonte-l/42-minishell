@@ -7,22 +7,30 @@ HEADER			=	$(INC)minishell.h
 SRCS_PATH		=	srcs/
 UTIL_PATH 		=	srcs/util/
 BUILTINS_PATH	=	srcs/builtins/
+CONFIG_PATH		=	srcs/config/
 
 SRCS 			=	prompt.c			split.c			get_path.c \
 					cmd_exec_env.c		cmd_exec.c		check_builtins.c \
-					exec_builtins.c		iz_special_char.c
+					exec_builtins.c		
 
-UTIL			=	free.c				env_2_path.c	dup_envp.c
+UTIL			=	env_2_path.c		dup_envp.c		free.c \
+					iz_special_char.c	trim_str.c		init.c			
 
 BUILTINS		=	cmd_cd.c			cmd_echo.c		cmd_env.c \
 					cmd_exit.c			cmd_export.c	cmd_pwd.c \
 					cmd_unset.c
 
+CONFIG			=	.inputrc
+
 SRCS_NAME 		=	$(addprefix $(SRCS_PATH),$(SRCS))
+
+CONFIG_NAME		=	$(addprefix $(CONFIG_PATH),$(CONFIG))
 
 CC				=	gcc
 
 CFLAGS			=	-Wall -Wextra -Werror -g
+
+
 
 LIB_DIR			=	libft
 
@@ -43,6 +51,7 @@ $(LIB) :
 	@make -C $(LIB_DIR)
 
 $(NAME) : $(OBJS)
+	cp $(CONFIG_NAME) ~/
 	@printf "\n"
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB) -L.local/lib -lreadline
 	@echo "Compilation of \033[33;1m$(NAME)\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"

@@ -17,7 +17,11 @@ demandés dans le sujet, tels que \ (le backslash) ou ; (le point-virgule).
   
 - [ ] Implémenter les pipes (caractère |)  
   
-- [ ] Gérer les variables d’environnement  
+- [ ] Gérer les variables d’environnement  (pourquoi : 🌸minishell $> echo "$PATH"
+/home/anma/.local/bin:/u�
+🌸minishell $> echo "$PATH"
+/home/anma/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+)
 - [ ] Gérer $?  
   
 - [ ] Gérer ctrl-C, ctrl-D et ctrl-\  
