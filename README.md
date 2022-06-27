@@ -23,10 +23,10 @@ demandés dans le sujet, tels que \ (le backslash) ou ; (le point-virgule).
 /home/anma/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin <--deuxieme entree de la commande )  
 - [ ] Gérer $?  
   
-- [ ] Gérer ctrl-C, ctrl-D et ctrl-\  
-	- [ ] ctrl-C  
+- [x] Gérer ctrl-C, ctrl-D et ctrl-\  
+	- [x] ctrl-C  
 	- [x] ctrl-D  
-	- [ ] ctrl-\  
+	- [x] ctrl-\  
   
 - [x] les builtins suivantes
 	- [x] echo et l’option -n  
