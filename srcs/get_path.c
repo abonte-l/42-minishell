@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:35:58 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/06/23 13:39:14 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/06/27 20:20:42 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ bool	get_path(char **cmd, t_dlst *list)
 	char	**path_split;
 
 	path = NULL;
+	
 	bin = NULL;
 	path_split = NULL;
 	if (cmd[0][0] != '/' && ft_strncmp(cmd[0], "./", 2) != 0)
@@ -78,6 +79,7 @@ bool	get_path(char **cmd, t_dlst *list)
 		path = NULL;
 		bin = make_magic_path(cmd, bin, path_split);
 	}
+
 	if (bin == NULL)
 		return (false);
 	else

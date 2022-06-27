@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 13:35:56 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/06/27 19:54:37 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/06/27 20:44:04 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	handle_sigint(int sig)
-{
-	(void)sig;
-	write(1, "\n", 1);
-	rl_on_new_line();
-	rl_replace_line("", 0);
-	rl_redisplay();
-}
-
-
 void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 {
+	// const char *dup_buffer;
+
 	buffer = readline("🌸minishell $> ");
 	while (buffer != NULL)
 	{
-		cmd = split(buffer, " \n\t");
+		// dup_buffer = buffer;
+		// printf("buffer = %s\n", buffer);
+		// printf("dup_buffer = %s\n", dup_buffer);
+		cmd = split(buffer, " \n\t\"\'");
+		// printf("buffer = %s\n", buffer);
+		// printf("dup_buffer = %s\n", dup_buffer);
 		cmd = iz_special_char(env_list, cmd);
 		if (cmd[0] == NULL)
 			printf("Command not found\n");
@@ -64,6 +61,8 @@ void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 			cmd_exec_env(cmd, envp);
 		else
 			cmd_exec(cmd);
+		// printf("buffer = %s\n", buffer);
+		// printf("dup_buffer = %s\n", dup_buffer);
 		add_history(buffer);
 		free_array(cmd);
 		buffer = readline("🌸minishell $> ");
