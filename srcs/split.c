@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 09:10:47 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/01 11:38:28 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:30:45 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char **split(char *raw_data, char *limit)
+void	make_magic_split(char **cmd, size_t idx)
+{
+	cmd[idx] = NULL;
+	free_array(cmd);
+}
+
+char	**split(char *raw_data, char *limit)
 {
 	char	*ptr;
 	char	**cmd;
 	size_t	idx;
+	size_t	n;
 
 	ptr = NULL;
 	cmd = NULL;
 	idx = 0;
-	ptr = ft_strtok(raw_data, limit);
-	while (ptr) 
+	n = 0;
+	while (n < ft_strlen(raw_data))
 	{
+		ptr = ft_strtok(raw_data + n, limit);
+		if (!ptr)
+		{
+			make_magic_split(cmd, idx);
+			return (NULL);
+		}
 		cmd = (char **)ft_realloc(cmd, ((idx + 1) * sizeof(char *)));
-		cmd[idx] = ft_strdup(ptr);
-		ptr = ft_strtok(NULL, limit);
+		cmd[idx] = ptr;
+		n += ft_strlen(ptr) + 1;
 		++idx;
 	}
 	cmd = (char **)ft_realloc(cmd, ((idx + 1) * sizeof(char *)));
 	cmd[idx] = NULL;
 	return (cmd);
 }
-

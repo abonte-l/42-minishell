@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 13:35:56 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/04 17:59:17 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:54:37 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+void	handle_sigint(int sig)
+{
+	(void)sig;
+	write(1, "\n", 1);
+	rl_on_new_line();
+	rl_replace_line("", 0);
+	rl_redisplay();
+}
+
+
 void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 {
-	char *dup_buffer;
-
-	while ((buffer = readline("🌸minishell $> ")) != NULL)
+	buffer = readline("🌸minishell $> ");
+	while (buffer != NULL)
 	{
-		dup_buffer = ft_strdup(buffer);
-		cmd = split(dup_buffer, " \n\t");
-		cmd = iz_special_char(env_list, cmd); //idee pour gerer les variables d'environnement ou autre (je pense besoin de izalpha a voir)
+		cmd = split(buffer, " \n\t");
+		cmd = iz_special_char(env_list, cmd);
 		if (cmd[0] == NULL)
-			printf("Command not found\n");	
+			printf("Command not found\n");
 		else if (iz_builtin(cmd[0]) == true)
 			builtin_exec(cmd, env_list);
 		else if (get_path(cmd, env_list) == true)
@@ -58,8 +66,7 @@ void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 			cmd_exec(cmd);
 		add_history(buffer);
 		free_array(cmd);
-		free(dup_buffer);
-		dup_buffer = NULL;
+		buffer = readline("🌸minishell $> ");
 	}
 }
 
@@ -72,13 +79,14 @@ int	main(int ac, char **av, char **envp)
 
 	(void)ac;
 	(void)av;
-	buffer = NULL;
+	signal(SIGQUIT, SIG_IGN);
+	signal(SIGINT, handle_sigint);
 	cmd = NULL;
 	buf_size = 2048;
 	var_env_lst = dlist_new();
 	dup_envp(envp, var_env_lst);
 	buffer = (char *)ft_calloc(sizeof(char), buf_size);
-	if (buffer == NULL) 
+	if (buffer == NULL)
 	{
 		perror("Malloc failure");
 		return (EXIT_FAILURE);
@@ -86,4 +94,5 @@ int	main(int ac, char **av, char **envp)
 	make_magic_loop(var_env_lst, envp, buffer, cmd);
 	printf("exit \n");
 	free(buffer);
+	return (130);
 }

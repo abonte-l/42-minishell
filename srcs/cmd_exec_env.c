@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:18:24 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/02 13:00:33 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/06/23 13:33:35 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void	cmd_exec_env(char **cmd, char **envp)
 	pid = fork();
 	if (pid == -1)
 		perror("fork");
-	else if (pid > 0) 
+	else if (pid > 0)
 	{
 		waitpid(pid, &status, 0);
 		kill(pid, SIGTERM);
-	} 
-	else 
+	}
+	else
 	{
 		if (execve(cmd[0], cmd, envp) == -1)
 			perror("shell");

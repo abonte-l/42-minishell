@@ -8,7 +8,9 @@ SRC_PATH	=	srcs/
 MEM_PATH	=	$(SRC_PATH)mem/
 STR_PATH	=	$(SRC_PATH)str/
 CHAR_PATH	=	$(SRC_PATH)char/
+NBR_PATH	=	$(SRC_PATH)nbr/
 LLIST_PATH	=	$(SRC_PATH)llist/
+TAB_PATH	=	$(SRC_PATH)tab/
 
 MEM			=	ft_bzero.c				ft_memcpy.c 			ft_calloc.c \
 				ft_realloc.c
@@ -22,15 +24,21 @@ STR			=	ft_strlen.c				ft_strncmp.c			ft_strdup.c	\
 CHAR		=	ft_putchar.c			ft_putchar_fd.c			ft_izalpha.c \
 				ft_izdigit.c			ft_izalnum.c
 
+NBR			=	ft_atoi.c
+
 LLIST		=	dlist_add_end.c			dlist_add_start.c		dlist_display.c\
 				dlist_add_middle.c		new_node_start.c 		new_node_end.c\
 				dlist_delete_list.c		dlist_delete_node.c		dlist_new.c
 
+TAB			=	ft_tabsize.c
+
 OBJ_PATH	=	obj/
 
 OBJ_NAME	+=	$(MEM:.c=.o)
-OBJ_NAME	+=	$(STR:.c=.o)
+OBJ_NAME	+=	$(STR:.c=.o)	
 OBJ_NAME	+=	$(CHAR:.c=.o)
+OBJ_NAME	+=	$(NBR:.c=.o)
+OBJ_NAME	+=	$(TAB:.c=.o)
 OBJ_NAME	+=	$(LLIST:.c=.o)
 
 OBJ			=	$(addprefix $(OBJ_PATH),$(OBJ_NAME))
@@ -62,10 +70,20 @@ $(OBJ_PATH)%.o:	$(CHAR_PATH)%.c $(HEADER)
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
+$(OBJ_PATH)%.o:	$(NBR_PATH)%.c $(HEADER)
+	@printf "\033[34;1m|\033[0;m"
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+
 $(OBJ_PATH)%.o:	$(LLIST_PATH)%.c $(HEADER)
 	@printf "\033[34;1m|\033[0;m"
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@	
+
+$(OBJ_PATH)%.o:	$(TAB_PATH)%.c $(HEADER)
+	@printf "\033[34;1m|\033[0;m"
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJ_PATH)

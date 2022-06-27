@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 12:55:52 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/06/23 12:55:54 by abonte-l         ###   ########.fr       */
+/*   Created: 2022/06/23 12:49:28 by abonte-l          #+#    #+#             */
+/*   Updated: 2022/06/23 12:49:32 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_atoi(const char *str)
 {
-	char	*copy;
-	int		i;
+	int	i;
+	int	num;
+	int	neg;
 
 	i = 0;
-	while (s1[i])
+	neg = 1;
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		++i;
-	copy = malloc(sizeof(char) * (i + 1));
-	if (!copy)
-		return (0);
-	i = 0;
-	while (s1[i])
+	if (str[i] == '-')
+		neg = -1;
+	if (str[i] == '-' || str[i] == '+')
+		++i;
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		copy[i] = s1[i];
-		i++;
+		num = num * 10 + (str[i] - 48);
+		++i;
 	}
-	copy[i] = '\0';
-	return (copy);
+	num = num * neg;
+	return (num);
 }

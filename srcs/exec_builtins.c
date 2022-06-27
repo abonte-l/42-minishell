@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 15:37:35 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/04/05 11:55:42 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:07:05 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+void	make_magic_echo(char **built_in, int option)
+{
+	size_t	size;
+
+	size = ft_tabsize(built_in);
+	if (size > 1)
+	{
+		if (!strcmp(built_in[1], "-n"))
+			option = TRUE;
+	}
+	builtin_echo(option, built_in);
+}
+
 void	builtin_exec(char **built_in, t_dlst *list)
 {
-	int	option;
-	
+	int		option;
+
 	option = FALSE;
 	if (!ft_strcmp(built_in[0], "pwd"))
 		builtin_pwd();
@@ -31,15 +44,11 @@ void	builtin_exec(char **built_in, t_dlst *list)
 	else if (!strcmp(built_in[0], "env"))
 		builtin_env(list);
 	else if (!ft_strcmp(built_in[0], "exit"))
-		builtin_exit();
+		builtin_exit(built_in[1]);
 	else if (!strcmp(built_in[0], "unset"))
 		builtin_unset(built_in, list);
 	else if (!strcmp(built_in[0], "export"))
 		builtin_export(built_in, list);
 	else if (!strcmp(built_in[0], "echo"))
-	{
-		if (!strcmp(built_in[1], "-n"))
-			option = TRUE;
-		builtin_echo(option, built_in);
-	}
+		make_magic_echo(built_in, option);
 }

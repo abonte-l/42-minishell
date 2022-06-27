@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/23 13:23:44 by abonte-l          #+#    #+#             */
+/*   Updated: 2022/06/23 13:26:47 by abonte-l         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -23,23 +35,23 @@
 /*
 ** defining node of the linked list
 */
-typedef struct		s_node
+typedef struct s_node
 {
 	char			*data;
 	int				index;
-	struct s_node 	*next;
+	struct s_node	*next;
 	struct s_node	*prev;
-}					t_node;
+}				t_node;
 
 /*
 ** defining a double linked list
 */
-typedef struct		s_dlst
+typedef struct s_dlst
 {
 	int				length;
-	struct s_node 	*tail;
+	struct s_node	*tail;
 	struct s_node	*head;
-}					t_dlst;
+}				t_dlst;
 
 /*
 ** double linked list functions
@@ -48,10 +60,10 @@ t_dlst	*dlist_new(void);
 t_dlst	*dlist_add_end(t_dlst *list, char *data);
 t_dlst	*dlist_add_start(t_dlst *list, char *data);
 t_dlst	*dlist_delete_node(t_dlst *list, char *data);
-void 	dlist_delete(t_dlst **list);
+void	dlist_delete(t_dlst **list);
 void	new_node_end(t_dlst *list, t_node *new_node, char *data);
 void	new_node_start(t_dlst *list, t_node *new_node, char *data);
-void 	dlist_display(t_dlst *p_list);
+void	dlist_display(t_dlst *p_list);
 
 /*
 ** memory functions
@@ -66,7 +78,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 */
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
-char 	*ft_strtok(char *str, char *delim);
+char	*ft_strtok(char *str, char *delim);
 char	*ft_strndup(const char *s1, size_t n);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strcat(char *dest, const char *src);
@@ -85,5 +97,15 @@ int		ft_izdigit(int c);
 int		ft_izalnum(int c);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
+
+/*
+** number functions
+*/
+int		ft_atoi(const char *str);
+
+/*
+** number functions
+*/
+size_t	ft_tabsize(char **tab);
 
 #endif

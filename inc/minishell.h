@@ -1,5 +1,17 @@
-#ifndef _MINISHELL_H
-# define _MINISHELL_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/23 13:28:23 by abonte-l          #+#    #+#             */
+/*   Updated: 2022/06/23 15:46:31 by abonte-l         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef MINISHELL_H
+# define MINISHELL_H
 
 # include <signal.h>
 # include <stdbool.h>
@@ -41,21 +53,21 @@
 # define TAB '\t'
 # define VAR '$'
 
-typedef struct		s_export
+typedef struct s_export
 {
 	char	*tmp;
 	char	*tmp_2;
 	int		i;
 	int		iz_valid;
-}					t_export;
+}				t_export;
 
 bool	get_path(char **cmd, t_dlst *list);
 void	cmd_exec_env(char **cmd, char **envp);
 void	cmd_exec(char **cmd);
-char 	**split(char *raw_data, char *limit);
+char	**split(char *raw_data, char *limit);
 bool	iz_builtin(char *cmd);
 void	builtin_exec(char **built_in, t_dlst *list);
-char 	**iz_special_char(t_dlst *list, char **cmd);
+char	**iz_special_char(t_dlst *list, char **cmd);
 
 /*
 ** builtins functions
@@ -66,7 +78,7 @@ void	builtin_env(t_dlst *p_list);
 void	builtin_echo(int option, char **built_in);
 void	builtin_unset(char **built_in, t_dlst *list);
 void	builtin_export(char **built_in, t_dlst *list);
-void	builtin_exit(void);
+void	builtin_exit(char *arg);
 
 /*
 ** utils functions
