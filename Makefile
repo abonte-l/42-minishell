@@ -14,7 +14,8 @@ SRCS 			=	prompt.c			split.c			get_path.c \
 					exec_builtins.c		
 
 UTIL			=	env_2_path.c		dup_envp.c		free.c \
-					iz_special_char.c	trim_str.c		init.c			
+					iz_special_char.c	trim_str.c		init.c \
+					signal.c
 
 BUILTINS		=	cmd_cd.c			cmd_echo.c		cmd_env.c \
 					cmd_exit.c			cmd_export.c	cmd_pwd.c \

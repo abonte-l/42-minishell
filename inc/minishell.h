@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:28:23 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/06/23 15:46:31 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/07/04 09:45:32 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@
 # define S_QUOTE '\''
 # define TAB '\t'
 # define VAR '$'
+# define TAG '?'
 
 typedef struct s_export
 {
@@ -89,5 +90,6 @@ char	*env_2_path(t_dlst *p_list, char *path);
 void	indexation_env(t_dlst *list);
 char	*trim_str(char *str, int i);
 void	init_export(char **built_in, t_export *export);
+void	sigint_handler(int sig);
 
 #endif

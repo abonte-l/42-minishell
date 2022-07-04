@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 15:32:50 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/06/27 20:05:57 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/07/04 09:23:07 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	**iz_special_char(t_dlst *list, char **cmd)
 	j = 0;
 		while (cmd[i][j])
 		{
-			if (cmd[i][j] == VAR && cmd[i][j + 1] != TAG)
+			if (cmd[i][j] == VAR)
 			{
 				cmd[i] = ft_strdup(dup_var(cmd[i], list));
 				break;

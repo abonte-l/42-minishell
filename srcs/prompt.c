@@ -6,7 +6,7 @@
 /*   By: abonte-l <abonte-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 13:35:56 by abonte-l          #+#    #+#             */
-/*   Updated: 2022/06/27 20:44:04 by abonte-l         ###   ########.fr       */
+/*   Updated: 2022/07/04 09:45:32 by abonte-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	make_magic_loop(t_dlst *env_list, char **envp, char *buffer, char **cmd)
 			cmd_exec_env(cmd, envp);
 		else
 			cmd_exec(cmd);
+		printf("rl_line_buffer = %s\n", rl_line_buffer);
 		// printf("buffer = %s\n", buffer);
 		// printf("dup_buffer = %s\n", dup_buffer);
 		add_history(buffer);
@@ -78,8 +79,9 @@ int	main(int ac, char **av, char **envp)
 
 	(void)ac;
 	(void)av;
+	signal(SIGINT, sigint_handler);
 	signal(SIGQUIT, SIG_IGN);
-	signal(SIGINT, handle_sigint);
+	
 	cmd = NULL;
 	buf_size = 2048;
 	var_env_lst = dlist_new();
